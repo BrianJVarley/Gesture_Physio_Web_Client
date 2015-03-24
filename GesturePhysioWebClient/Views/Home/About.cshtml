@@ -1,4 +1,7 @@
-﻿@{
+﻿
+@model IEnumerable<GesturePhysioWebClient.Models.Item>
+
+@{
     ViewBag.Title = "About";
 }
 
@@ -10,10 +13,31 @@
 <article>
     
     <p>
-        Patient Records:
+       
 
-        <table style="width:100%;"><tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr></table>
-
+        <table class="Item">
+            <tr>
+                <th>User</th>
+                <th>Gender</th>
+                <th>Exercise</th>
+                <th>Max Range</th>
+                <th>Date Completed</th>
+                <th>Painful Arc Start</th>
+                <th>Painful Arc End</th>
+            </tr>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.User</td>
+                    <td>@item.Gender</td>
+                    <td>@item.Exercise</td>
+                    <td>@item.Max_Range</td>
+                    <td>@item.Date</td>
+                    <td>@item.Painful_Arc_Start</td>
+                    <td>@item.Painful_Arc_End</td>     
+                </tr>
+            }
+        </table>
 
 
 
